@@ -1,0 +1,14 @@
+from selenium import webdriver
+import time
+import os
+from selenium.webdriver.support.ui import WebDriverWait
+driver = webdriver.Chrome()
+file_path='file:///'+os.path.abspath("C:\\课件\\我的课件\\测试\\selenium2\\locateElement\\drop_down.html")
+driver.get(file_path)
+
+ship = driver.find_element_by_id("ShippingMethod")
+ship.find_element_by_xpath("//*[@value='10.69']").click()
+#两种方式都可以
+# ship.find_element_by_xpath("//option[@value='10.69']").click()
+time.sleep(6)
+driver.quit()
